@@ -1,0 +1,21 @@
+# Zig build artifacts
+.zig-cache/
+zig-out/
+
+# Compiled binaries, shared libs, and temporary outputs
+*.o
+*.a
+*.so
+*.so.*
+lib/*.so*
+benchmarks/*.png
+benchmarks/*.jpg
+!benchmarks/*.csv
+!benchmarks/*.json
+
+# Python virtualenvs / caches (only used externally for model export)
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.pt
