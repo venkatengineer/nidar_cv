@@ -1,0 +1,15 @@
+# CMake build directories
+build/
+build-debug/
+cmake-build-*/
+
+# Compiled binaries, shared libs, and temporary outputs
+*.o
+*.a
+*.so
+*.so.*
+lib/*.so*
+benchmarks/*.png
+benchmarks/*.jpg
+!benchmarks/*.csv
+!benchmarks/*.json

@@ -1,0 +1,86 @@
+{
+  "language": "cpp",
+  "compiler_version": "g++ 16.2.1",
+  "optimize_mode": "release",
+  "onnxruntime_version": "1.29.0",
+  "execution_provider": "CPUExecutionProvider",
+  "model_path": "models/yolov26n.onnx",
+  "input_shape": [1, 3, 640, 640],
+  "output_shape": [1, 300, 6],
+  "output_format": "yolo26_end2end",
+  "config": {
+    "threads": 4,
+    "warmup_iterations": 100,
+    "measured_iterations": 1000,
+    "conf_threshold": 0.2500,
+    "iou_threshold": 0.4500,
+    "image_count": 2
+  },
+  "system_metrics": {
+    "app_startup_ms": 92.763835,
+    "model_load_ms": 77.960256,
+    "binary_size_bytes": 329544,
+    "peak_rss_kb": 105268,
+    "rss_before_kb": 67304,
+    "rss_after_kb": 105268,
+    "pipeline_cpu_utilization_pct": 397.4043,
+    "inference_only_cpu_utilization_pct": 397.5446
+  },
+  "stages": {
+    "preprocessing": {
+      "count": 1000,
+      "mean_ms": 3.509138,
+      "median_ms": 3.700135,
+      "p95_ms": 4.195471,
+      "p99_ms": 4.494610,
+      "min_ms": 2.775342,
+      "max_ms": 5.110877,
+      "std_dev_ms": 0.481555,
+      "avg_fps": 284.9703
+    },
+    "pipeline_inference": {
+      "count": 1000,
+      "mean_ms": 16.638137,
+      "median_ms": 16.570486,
+      "p95_ms": 17.609397,
+      "p99_ms": 19.008121,
+      "min_ms": 15.513367,
+      "max_ms": 21.205081,
+      "std_dev_ms": 0.592513,
+      "avg_fps": 60.1029
+    },
+    "postprocessing": {
+      "count": 1000,
+      "mean_ms": 0.001001,
+      "median_ms": 0.000979,
+      "p95_ms": 0.001318,
+      "p99_ms": 0.001541,
+      "min_ms": 0.000559,
+      "max_ms": 0.004948,
+      "std_dev_ms": 0.000238,
+      "avg_fps": 998903.2043
+    },
+    "total_end_to_end": {
+      "count": 1000,
+      "mean_ms": 20.148277,
+      "median_ms": 20.020262,
+      "p95_ms": 21.442537,
+      "p99_ms": 22.827329,
+      "min_ms": 18.549700,
+      "max_ms": 24.619819,
+      "std_dev_ms": 0.809073,
+      "avg_fps": 49.6320
+    },
+    "inference_only": {
+      "count": 1000,
+      "mean_ms": 17.193359,
+      "median_ms": 17.059647,
+      "p95_ms": 18.178497,
+      "p99_ms": 20.358685,
+      "min_ms": 15.908543,
+      "max_ms": 23.522965,
+      "std_dev_ms": 0.678122,
+      "avg_fps": 58.1620
+    }
+  }
+}
