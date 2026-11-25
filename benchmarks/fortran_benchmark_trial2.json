@@ -1,0 +1,102 @@
+{
+  "language": "fortran",
+  "compiler_version": "gfortran 16.2.1",
+  "optimize_mode": "release",
+  "onnxruntime_version": "1.29.0",
+  "execution_provider": "CPUExecutionProvider",
+  "model_path": "models/yolov26n.onnx",
+  "input_shape": [
+    1,
+    3,
+    640,
+    640
+  ],
+  "output_shape": [
+    1,
+    300,
+    6
+  ],
+  "output_format": "yolo26_end2end",
+  "config": {
+    "threads": 4,
+    "warmup_iterations": 100,
+    "measured_iterations": 1000,
+    "conf_threshold": 0.25,
+    "iou_threshold": 0.45,
+    "image_count": 2
+  },
+  "system_metrics": {
+    "app_startup_ms": 59.229677,
+    "model_load_ms": 50.67489,
+    "binary_size_bytes": 438168,
+    "peak_rss_kb": 107700,
+    "rss_before_kb": 69620,
+    "rss_after_kb": 107700,
+    "pipeline_cpu_utilization_pct": 396.3454,
+    "inference_only_cpu_utilization_pct": 396.9447
+  },
+  "stages": {
+    "preprocessing": {
+      "count": 1000,
+      "mean_ms": 3.018383,
+      "median_ms": 3.162181,
+      "p95_ms": 3.51077,
+      "p99_ms": 3.771148,
+      "min_ms": 2.299899,
+      "max_ms": 5.342169,
+      "std_dev_ms": 0.401053,
+      "avg_fps": 331.3032
+    },
+    "pipeline_inference": {
+      "count": 1000,
+      "mean_ms": 21.134213,
+      "median_ms": 20.933481,
+      "p95_ms": 23.157526,
+      "p99_ms": 25.323405,
+      "min_ms": 19.17346,
+      "max_ms": 27.499554,
+      "std_dev_ms": 1.008861,
+      "avg_fps": 47.3166
+    },
+    "postprocessing": {
+      "count": 1000,
+      "mean_ms": 0.001674,
+      "median_ms": 0.001636,
+      "p95_ms": 0.002009,
+      "p99_ms": 0.002675,
+      "min_ms": 0.00109,
+      "max_ms": 0.006002,
+      "std_dev_ms": 0.000336,
+      "avg_fps": 597437.5902
+    },
+    "total_end_to_end": {
+      "count": 1000,
+      "mean_ms": 24.15427,
+      "median_ms": 23.993254,
+      "p95_ms": 26.176429,
+      "p99_ms": 28.45204,
+      "min_ms": 21.833859,
+      "max_ms": 30.749194,
+      "std_dev_ms": 1.093904,
+      "avg_fps": 41.4005
+    },
+    "inference_only": {
+      "count": 1000,
+      "mean_ms": 21.55948,
+      "median_ms": 21.287041,
+      "p95_ms": 23.896896,
+      "p99_ms": 26.128719,
+      "min_ms": 19.397581,
+      "max_ms": 28.409121,
+      "std_dev_ms": 1.050095,
+      "avg_fps": 46.3833
+    }
+  },
+  "trial": 2,
+  "external_rss_sampling": {
+    "sample_count": 2490,
+    "interval_ms": 20,
+    "avg_rss_kb": 107565.44,
+    "sampled_peak_rss_kb": 107700
+  }
+}
